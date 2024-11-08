@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelVibes - Experience the World</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-paper-plane"></i>
+                <span>TravelVibes</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h1>Adventure Awaits</h1>
+            <p>Discover new horizons, create lasting memories</p>
+            <div class="search-box">
+                <input type="text" placeholder="Where do you want to go?">
+                <button><i class="fas fa-search"></i> Search</button>
+            </div>
+        </div>
+        <div class="floating-images">
+            <div class="image-card card1">
+                <img src="beach.jpg" alt="Beach">
+                <span>Beach Escapes</span>
+            </div>
+            <div class="image-card card2">
+                <img src="mountain.jpg" alt="Mountain">
+                <span>Mountain Adventures</span>
+            </div>
+            <div class="image-card card3">
+                <img src="city.jpg" alt="City">
+                <span>City Breaks</span>
+            </div>
+        </div>
+    </section>
+<!-- Trip Calculator Section -->
+<section id="calculator" class="calculator-section">
+    <h2>Plan Your Dream Trip</h2>
+    <p class="section-subtitle">Calculate the cost for your next adventure</p>
+    
+    <div class="destination-grid">
+        <!-- Paris Card -->
+        <div class="destination-calc-card" data-destination="paris">
+            <img src="parish.jpg" alt="Paris">
+            <div class="card-content">
+                <h3>Paris, France</h3>
+                <p>Starting from $999</p>
+                <ul class="features">
+                    <li><i class="fas fa-hotel"></i> Luxury Hotels</li>
+                    <li><i class="fas fa-utensils"></i> Fine Dining</li>
+                    <li><i class="fas fa-landmark"></i> Cultural Tours</li>
+                </ul>
+                <button class="select-btn" onclick="selectDestination('paris')">Select</button>
+            </div>
+        </div>
+
+        <!-- Dubai Card -->
+        <div class="destination-calc-card" data-destination="dubai">
+            <img src="maldives.jpg" alt="Dubai">
+            <div class="card-content">
+                <h3>Dubai, UAE</h3>
+                <p>Starting from $1299</p>
+                <ul class="features">
+                    <li><i class="fas fa-swimming-pool"></i> Luxury Resorts</li>
+                    <li><i class="fas fa-desert"></i> Desert Safari</li>
+                    <li><i class="fas fa-shopping-bag"></i> Shopping</li>
+                </ul>
+                <button class="select-btn" onclick="selectDestination('dubai')">Select</button>
+            </div>
+        </div>
+
+        <!-- Bali Card -->
+        <div class="destination-calc-card" data-destination="bali">
+            <img src="bali.jpg" alt="Bali">
+            <div class="card-content">
+                <h3>Bali, Indonesia</h3>
+                <p>Starting from $899</p>
+                <ul class="features">
+                    <li><i class="fas fa-umbrella-beach"></i> Beach Resort</li>
+                    <li><i class="fas fa-spa"></i> Spa & Wellness</li>
+                    <li><i class="fas fa-water"></i> Water Sports</li>
+                </ul>
+                <button class="select-btn" onclick="selectDestination('bali')">Select</button>
+            </div>
+        </div>
+
+    </div>
+
+  <!-- Calculator Form -->
+<div class="calculator-form" id="calculatorForm">
+    <h3>Customize Your Trip</h3>
+    <div class="form-grid">
+        <div class="form-group">
+            <label for="destination">Selected Destination</label>
+            <input type="text" id="destination" readonly>
+        </div>
+        <div class="form-group">
+            <label for="days">Number of Days</label>
+            <input type="number" id="days" min="1" max="30" placeholder="Enter days">
+        </div>
+        <div class="form-group">
+            <label for="people">Number of People</label>
+            <input type="number" id="people" min="1" max="10" placeholder="Enter people">
+        </div>
+        <div class="form-group">
+            <label for="accommodation">Accommodation Type</label>
+            <select id="accommodation">
+                <option value="">Select Accommodation</option>
+                <option value="budget">Budget</option>
+                <option value="standard">Standard</option>
+                <option value="luxury">Luxury</option>
+            </select>
+        </div>
+    </div>
+    <button onclick="calculateTripCost()" class="calculate-btn">Calculate Cost</button>
+    <div id="calculation-result" class="result-box"></div>
+</div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Let's Plan Your Trip</h2>
+                <p>Our travel experts are here to help</p>
+                <div class="contact-details">
+                    <div><i class="fas fa-phone"></i> +1 234 567 890</div>
+                    <div><i class="fas fa-envelope"></i> hello@travelvibes.com</div>
+                    <div><i class="fas fa-map-marker-alt"></i> 123 Travel Street, World</div>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <select name="destination" required>
+                    <option value="">Select Destination</option>
+                    <option value="europe">Europe</option>
+                    <option value="asia">Asia</option>
+                    <option value="americas">Americas</option>
+                </select>
+                <textarea name="message" placeholder="Tell us about your dream vacation" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+  
+    <script src="script.js"></script>
+</body>
+</html>
